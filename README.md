@@ -1,15 +1,18 @@
-## Build the Dockerfile
+## 1. Installer NVIDIA container toolkit
+[NVIDIA container toolkit install guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+
+## 2. Build the Dockerfile
 ```
 docker build -t inf3995-equipe104-nvidia .
 ```
 
-## Open x server
+## 3. Open x server
 A faire une fois par session:
 ```
 xhost +
 ```
 
-## Start a terminal
+## 4. Start a terminal
 ```
 docker run -it --net=host --gpus all \
     --env="NVIDIA_DRIVER_CAPABILITIES=all" \
